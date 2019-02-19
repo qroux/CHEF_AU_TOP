@@ -2,7 +2,8 @@
 <p>Find me in app/views/services/index.html.erb</p>
 <% @services.each do |service| %>
 <p>
-  <%= link_to service.menu, service_path(service)  %>
+  <%= link_to service.menu_name, service_path(service)  %>
+  <%= service.menu %>
   <%= service.price %>
   <%= service.max_quantity %>
   <%= service.picture %>
