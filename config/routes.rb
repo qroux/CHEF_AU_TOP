@@ -1,18 +1,9 @@
 Rails.application.routes.draw do
-  get 'bookings/index'
-  get 'bookings/show'
-  get 'bookings/new'
-  get 'bookings/create'
-  get 'bookings/edit'
-  get 'bookings/update'
-  get 'bookings/destroy'
-  get 'services/index'
-  get 'services/show'
-  get 'services/new'
-  get 'services/create'
-  get 'services/edit'
-  get 'services/update'
-  get 'services/destroy'
+  resources :services do
+    resources :bookings, only: [:new, :create]
+  end
+  resources :bookings, only: [:show, :index, :destroy]
+
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
