@@ -1,6 +1,7 @@
 <h1>Services#edit <%= @service.menu %> </h1>
 <p>Find me in app/views/services/edit.html.erb</p>
 
+<p><%= @service.menu_name %></p>
 <p><%= @service.menu %></p>
 <p><%= @service.price %></p>
 <p><%= @service.max_quantity %></p>
@@ -10,6 +11,7 @@
 <p><%= @service.shift %></p>
 
 <%= simple_form_for @service do |f| %>
+  <%= f.input :menu_name %>
   <%= f.input :menu %>
   <%= f.input :price %>
   <%= f.input :max_quantity %>

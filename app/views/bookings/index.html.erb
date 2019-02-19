@@ -5,7 +5,7 @@
 <ul>
   <% @bookings.each do |booking| %>
   <li>
-    <label for="<%= booking.service.menu %>"><%=link_to "#{booking.service.menu}", booking_path(booking.id)%></label>
+    <label for="<%= booking.service.menu_name %>"><%=link_to "#{booking.service.menu}", booking_path(booking.id)%></label>
     <%= booking.place %>
     <%= booking.service.date %>
   </li>
