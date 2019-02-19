@@ -17,7 +17,9 @@
 
 
 <%= link_to "retour à l'index", services_path %>
+<% if policy(@service).edit? %>
 <%= link_to "éditer le menu", edit_service_path(@service) %>
+<% end %>
 
 
 

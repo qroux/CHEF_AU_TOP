@@ -1,5 +1,6 @@
 <h1>Services#index</h1>
 <p>Find me in app/views/services/index.html.erb</p>
+
 <% @services.each do |service| %>
 <p>
   <%= link_to service.menu_name, service_path(service)  %>
@@ -10,9 +11,12 @@
   <%= service.category %>
   <%= service.date %>
   <%= service.shift %>
+
+  <% if policy(@service).destroy? %>
   <%= link_to "delete", service_path(service),
   method: :delete,
   data: { confirm: "are you sure ?"}  %>
+  <% end %>
 </p>
 <% end %>
 <%= link_to "+ ajouter un nouveau menu", new_service_path %>

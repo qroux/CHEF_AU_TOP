@@ -1,6 +1,6 @@
 <h1>Services#new</h1>
 <p>Find me in app/views/services/new.html.erb</p>
-<%= @service %>
+
 <%= simple_form_for @service do |f| %>
 <%= f.input :menu_name %>
 <%= f.input :menu %>
@@ -10,7 +10,6 @@
 <%= f.input :date %>
 <%= f.input :shift %>
 <%= f.input :picture %>
-<%= f.input :user_id %>
 <!-- add cloudinary public api "string" -->
 <%= f.button :submit %>
 <% end %>
