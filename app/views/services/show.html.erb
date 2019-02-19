@@ -5,6 +5,8 @@
 
 <p>chef.avatar = @service.user.avatar ?</p>
 
+<%= cl_image_tag @service.picture, height: 300, width: 400, crop: :fill %>
+
 
 <p><%= @service.menu_name %></p>
 <p><%= @service.menu %></p>
@@ -18,6 +20,11 @@
 
 <%= link_to "retour à l'index", services_path %>
 <%= link_to "éditer le menu", edit_service_path(@service) %>
+
+
+
+
+
 
 
 
