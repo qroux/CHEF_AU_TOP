@@ -1,2 +1,21 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<h1><%=@booking.service.menu%></h1>
+<ul>
+  <li>
+    <%= @booking.service.menu %>
+  </li>
+  <li>
+    <%= @booking.place %>
+  </li>
+  <li>
+    <%= @booking.service.date %>
+  </li>
+  <li>
+    <%= @booking.service.shift %>
+  </li>
+  <li>
+    <%= @booking.quantity %>
+  </li>
+  <li>
+    <%= @booking.service.price %>
+  </li>
+</ul>

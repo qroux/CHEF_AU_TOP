@@ -1,2 +1,14 @@
-<h1>Bookings#index</h1>
+<h1>Mes bookings</h1>
 <p>Find me in app/views/bookings/index.html.erb</p>
+
+
+<ul>
+  <% @bookings.each do |booking| %>
+  <li>
+    <label for="<%= booking.service.menu %>"><%=link_to "#{booking.service.menu}", booking_path(booking.id)%></label>
+    <%= booking.place %>
+    <%= booking.service.date %>
+  </li>
+<%end%>
+</ul>
+<!-- il faudra ajouter le bouton delete link to -->
