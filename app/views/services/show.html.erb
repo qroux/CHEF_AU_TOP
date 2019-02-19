@@ -1,2 +1,23 @@
 <h1>Services#show</h1>
 <p>Find me in app/views/services/show.html.erb</p>
+
+<p>chef.avatar = @service.user.avatar ?</p>
+
+
+<p><%= @service.menu %></p>
+<p><%= @service.price %></p>
+<p><%= @service.max_quantity %></p>
+<p><%= @service.picture %></p>
+<p><%= @service.category %></p>
+<p><%= @service.date %></p>
+<p><%= @service.shift %></p>
+
+
+<%= link_to "retour à l'index", services_path %>
+<%= link_to "éditer le menu", edit_service_path(@service) %>
+
+
+
+
+
+
