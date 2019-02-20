@@ -1,19 +1,24 @@
-<h1> NOM DU CHEF : </h1>
-<h5>AVATAR DU CHEF</h5>
-<h3> NOM DU MENU: <%= @service.menu_name %></h3>
-<p>Find me in app/views/services/show.html.erb</p>
+<div class="container">
+  <div id="show_banner">
+    <%= cl_image_tag @service.picture, height: 300, width: 700, crop: :fill %>
 
-<p>chef.avatar = @service.user.avatar ?</p>
+  </div>
+  <div>
+    <h1> NOM DU CHEF : <%= @service.user.first_name %> <%= @service.user.last_name %> </h1>
+    <h5>AVATAR DU CHEF</h5>
+    <h3> NOM DU MENU: <%= @service.menu_name %></h3>
 
-
-<p><%= @service.menu_name %></p>
-<p><%= @service.menu %></p>
-<p><%= @service.price %></p>
-<p><%= @service.max_quantity %></p>
-<p><%= @service.picture %></p>
-<p><%= @service.category %></p>
-<p><%= @service.date %></p>
-<p><%= @service.shift %></p>
+  </div>
+  <div>
+    <p><%= @service.menu_name %></p>
+    <p><%= @service.menu %></p>
+    <p><%= @service.price %></p>
+    <p><%= @service.max_quantity %></p>
+    <p><%= @service.category %></p>
+    <p><%= @service.date %></p>
+    <p><%= @service.shift %></p>
+  </div>
+</div>
 
 <%= link_to "RESERVER CETTE PRESTATION", new_service_booking_path(@service) %>
 
@@ -21,9 +26,5 @@
 <% if policy(@service).edit? %>
 <%= link_to "éditer le menu", edit_service_path(@service) %>
 <% end %>
-
-
-
-
 
 
