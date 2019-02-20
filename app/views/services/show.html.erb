@@ -15,6 +15,7 @@
 <p><%= @service.date %></p>
 <p><%= @service.shift %></p>
 
+<%= link_to "RESERVER CETTE PRESTATION", new_service_booking_path(@service) %>
 
 <%= link_to "retour à l'index", services_path %>
 <% if policy(@service).edit? %>

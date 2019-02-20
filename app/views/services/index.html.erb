@@ -12,7 +12,7 @@
   <%= service.date %>
   <%= service.shift %>
 
-  <% if policy(@service).destroy? %>
+  <% if policy(service).destroy? %>
   <%= link_to "delete", service_path(service),
   method: :delete,
   data: { confirm: "are you sure ?"}  %>
