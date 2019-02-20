@@ -1,47 +1,24 @@
-<h1>Nos Propositions</h1>
-
-<% @services.each do |service| %>
-
-<div class="card-container">
-  <div class="card u-clearfix">
-    <div class="card-body">
-      <span class="card-number card-circle subtle">01</span>
-      <span class="card-author subtle">John Smith</span>
-      <h2 class="card-title">New Brunch Recipe</h2>
-      <span class="card-description subtle">These last few weeks I have been working hard on a new brunch recipe for you all.</span>
-      <div class="card-read">Read</div>
-      <span class="card-tag card-circle subtle">C</span>
-    </div>
-    <img src=<%= cl_image_path service.picture%> class="card-media" />
+  <div id="top_title">
+  <h1>Nos Propositions</h1>
   </div>
-  <div class="card-shadow"></div>
-</div>
 
+<div class="container">
 
+  <% @services.each do |service| %>
+  <div class="card-container">
+    <img  src=<%= cl_image_path service.picture%> class="card-media" />
 
-
-
-    <p>
-  <%= link_to service.menu_name, service_path(service)  %>
-  <%= service.menu %>
-  <%= service.price %>
-  <%= service.max_quantity %>
-  <%= service.category %>
-  <%= service.date %>
-  <%= service.shift %>
-  <%= link_to "delete", service_path(service),
-  method: :delete,
-  data: { confirm: "are you sure ?"}  %>
-</p>
-
-
-
+      <div class="card-body">
+    <span class="card-author subtle"><img id="chef" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt=""> <%= service.user.first_name %></span>
+    <h2 class="card-title"><%= link_to service.menu_name, service_path(service) %></h2>
+  <% end %>
+  </div>
 
   </div>
-  <a class="card-link" href="#" ></a>
-</div>
 
-<% end %>
+
+<div id="index_footer">
 <%= link_to "+ ajouter un nouveau menu", new_service_path %>
-
 <%= link_to "+ retour à la page Home", root_path %>
+</div>
+</div>
