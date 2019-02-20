@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resources :services do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:show, :index, :destroy]
+  resources :bookings, only: [:destroy, :show, :index]
+  get '/my_bookings', to: 'bookings#list_chief_bookings'
 
   devise_for :users
   root to: 'pages#home'
