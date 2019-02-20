@@ -1,0 +1,9 @@
+<h1>Faire une reservation</h1>
+
+
+<%= simple_form_for @booking do |f| %>
+<%= f.input :place %>
+<%= f.input :quantity %>
+<!-- add cloudinary public api "string" -->
+<%= f.button :submit %>
+<% end %>

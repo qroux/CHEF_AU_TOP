@@ -1,14 +1,5 @@
-<h1>Mes bookings</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<h1>Mes reservations</h1>
 
-
-<ul>
-  <% @bookings.each do |booking| %>
-  <li>
-    <label for="<%= booking.service.menu_name %>"><%=link_to "#{booking.service.menu}", booking_path(booking.id)%></label>
-    <%= booking.place %>
-    <%= booking.service.date %>
-  </li>
-<%end%>
-</ul>
+<!-- Avec render j'appelle mon partial qui affiche mes bookings-->
+<%= render "bookings_list", bookings: @bookings %>
 <!-- il faudra ajouter le bouton delete link to -->

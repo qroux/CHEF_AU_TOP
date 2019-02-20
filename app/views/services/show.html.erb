@@ -21,5 +21,12 @@
     <p><%= @service.shift %></p>
   </div>
 </div>
+
+<%= link_to "RESERVER CETTE PRESTATION", new_service_booking_path(@service) %>
+
 <%= link_to "retour à l'index", services_path %>
+<% if policy(@service).edit? %>
 <%= link_to "éditer le menu", edit_service_path(@service) %>
+<% end %>
+
+

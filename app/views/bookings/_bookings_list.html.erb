@@ -1,0 +1,16 @@
+<!-- La vue qui retourne ET la liste des bookings quand je passe par l'action
+index ou show de bookings ET la liste des services du chef qui ont ete reserve
+quand je passe par l'action list_chief_bookings -->
+
+<ul>
+  <% bookings.each do |booking| %>
+    <li>
+      <%=link_to "#{booking.service.menu_name}", booking%>
+      <%= booking.place %>
+      <%= booking.service.date %>
+      <%= link_to "delete", booking_path(booking),
+      method: :delete,
+      data: { confirm: "are you sure ?"}  %>
+  <% end %>
+    </li>
+</ul>
