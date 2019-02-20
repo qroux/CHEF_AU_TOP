@@ -3,6 +3,7 @@
 </div>
 <div class="container">
   <% @services.each do |service| %>
+  <%= link_to service_path(service) do %>
     <div class="card-container">
       <img src="<%= cl_image_path service.picture%>" class="card-media">
       <div class="card-body">
@@ -17,6 +18,7 @@
         <% end %>
       </div>
   </div>
+  <% end %>
 <% end %>
 </div>
   <div id="index_footer">
