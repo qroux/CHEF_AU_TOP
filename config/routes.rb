@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:destroy, :show, :index]
   get '/my_bookings', to: 'bookings#list_chief_bookings'
+  get '/about', to: 'pages#about'
 
   devise_for :users
   root to: 'pages#home'
