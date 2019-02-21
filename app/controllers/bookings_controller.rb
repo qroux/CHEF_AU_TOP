@@ -12,6 +12,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     authorize @booking
     @service = Service.find(params[:service_id])
+    authorize @service
+    render "services/show"
   end
 
   def create
@@ -23,7 +25,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      render :new
+      render "services/show"
     end
   end
 
