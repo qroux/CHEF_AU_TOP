@@ -29,26 +29,4 @@
       <%= f.button :submit %>
       <% end %>
 </div>
-<<<<<<< HEAD
 
-<%= link_to "RESERVER CETTE PRESTATION", new_service_booking_path(@service) %>
-
-<%= link_to "retour à l'index", services_path %>
-<% if policy(@service).edit? %>
-<%= link_to "éditer le menu", edit_service_path(@service) %>
-<% end %>
-
-<% if @service.bookings.length == 0 %>
-  <h1>Faire une reservation</h1>
-
-
-  <%= simple_form_for [@service, @booking] do |f| %>
-  <%= f.input :place %>
-  <%= f.input :quantity %>
-  <%= f.button :submit %>
-  <% end %>
-<% end %>
-
-
-=======
->>>>>>> b64e80eeab9251d1b2f18325d067d68d593dd396
