@@ -23,6 +23,6 @@
     <div class="button"><%= link_to "RESERVER CETTE PRESTATION", new_service_booking_path(@service) %></div>
    <br> <div class="button"><%= link_to "retour à l'index", services_path %></div>
     <% if policy(@service).edit? %>
-    <%= link_to "éditer le menu", edit_service_path(@service) %>
+    <br> <div class="button"><%= link_to "éditer le menu", edit_service_path(@service) %></div>
     <% end %>
   </div>
