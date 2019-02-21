@@ -1,20 +1,27 @@
-<h1>Services#index</h1>
-<p>Find me in app/views/services/index.html.erb</p>
-<% @services.each do |service| %>
-<p>
-  <%= link_to service.menu_name, service_path(service)  %>
-  <%= service.menu %>
-  <%= service.price %>
-  <%= service.max_quantity %>
-  <%= service.picture %>
-  <%= service.category %>
-  <%= service.date %>
-  <%= service.shift %>
-  <%= link_to "delete", service_path(service),
-  method: :delete,
-  data: { confirm: "are you sure ?"}  %>
-</p>
+<div id="top_title">
+  <h1>Nos Propositions</h1>
+</div>
+<div class="container">
+  <% @services.each do |service| %>
+  <%= link_to service_path(service) do %>
+    <div class="card-container">
+      <img src="<%= cl_image_path service.picture%>" class="card-media">
+      <div class="card-body">
+        <span class="card-author subtle">
+          <img id="chef" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt=""> <%= service.user.first_name %>
+        </span>
+        <h2 class="card-title"><%= link_to service.menu_name, service_path(service) %></h2>
+        <% if policy(service).destroy? %>
+        <%= link_to "delete", service_path(service),
+        method: :delete,
+        data: { confirm: "are you sure ?"}  %>
+        <% end %>
+      </div>
+  </div>
+  <% end %>
 <% end %>
-<%= link_to "+ ajouter un nouveau menu", new_service_path %>
-
-<%= link_to "+ retour à la page Home", root_path %>
+</div>
+  <div id="index_footer">
+    <%= link_to "+ ajouter un nouveau menu", new_service_path %>
+    <%= link_to "+ retour à la page Home", root_path %>
+  </div>
