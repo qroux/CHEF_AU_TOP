@@ -5,7 +5,7 @@
   <% @services.each do |service| %>
   <%= link_to service_path(service) do %>
     <div class="card-container">
-      <img src="<%= cl_image_path service.picture%>" class="card-media">
+      <%= cl_image_tag service.picture, class: "card-media" %>
       <div class="card-body">
         <span class="card-author subtle">
           <img id="chef" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt=""> <%= service.user.first_name %>
