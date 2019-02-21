@@ -1,7 +1,10 @@
 <div class="container">
   <div id="show_banner">
-    <%= cl_image_tag @service.picture, height: 300, width: 700, crop: :fill %>
-
+     <div class="card-container">
+      <%= cl_image_tag @service.picture, height: 300, width: 700, crop: :fill %>
+    <span class="manu-name">
+    <%= @service.menu_name %>
+    </span>
   </div>
   <div>
     <h1> NOM DU CHEF : <%= @service.user.first_name %> <%= @service.user.last_name %> </h1>
@@ -10,7 +13,7 @@
 
   </div>
   <div>
-    <p><%= @service.menu_name %></p>
+
     <p><%= @service.menu %></p>
     <p><%= @service.price %></p>
     <p><%= @service.max_quantity %></p>
