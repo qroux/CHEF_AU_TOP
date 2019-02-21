@@ -8,6 +8,7 @@ gem 'puma'
 gem 'rails', '5.2.2'
 gem 'redis'
 gem 'pundit'
+gem 'pg_search'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'

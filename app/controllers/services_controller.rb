@@ -1,7 +1,11 @@
 class ServicesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @services = policy_scope(Service)
+    if params[:query].present?
+      @services = policy_scope(Service).search_by_menu_name_and_category(params[:query])
+    else
+      @services = policy_scope(Service)
+    end
   end
 
   def show
