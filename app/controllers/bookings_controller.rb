@@ -22,9 +22,16 @@ class BookingsController < ApplicationController
     authorize @booking
     @service = Service.find(params[:service_id])
     @booking.service = @service
-    if @booking.save
-      redirect_to bookings_path
+    if @booking.quantity < @service.max_quantity
+      if @booking.save
+        flash[:alert] = nil
+        flash[:notice] = "Merci de votre réservation"
+        redirect_to bookings_path
+      else
+        render "services/show"
+      end
     else
+      flash[:alert] = "Il n'y a que #{@service.max_quantity} couverts disponibles"
       render "services/show"
     end
   end

@@ -45,14 +45,15 @@
 <%= link_to "éditer le menu", edit_service_path(@service) %>
 <% end %>
 
+<% if @service.bookings.length == 0 %>
+  <h1>Faire une reservation</h1>
 
 
-<h1>Faire une reservation</h1>
-
-
-<%= simple_form_for [@service, @booking] do |f| %>
-<%= f.input :place %>
-<%= f.input :quantity %>
-<%= f.button :submit %>
+  <%= simple_form_for [@service, @booking] do |f| %>
+  <%= f.input :place %>
+  <%= f.input :quantity %>
+  <%= f.button :submit %>
+  <% end %>
 <% end %>
+
 
