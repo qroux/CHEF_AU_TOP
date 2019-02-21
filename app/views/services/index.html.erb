@@ -14,8 +14,14 @@
         <h2 class="card-title"><%= link_to service.menu_name, service_path(service) %></h2>
         <% if policy(service).destroy? %>
         <div class="button-delete"><%= link_to "Delete your menu", service_path(service),
-        method: :delete,
-        data: { confirm: "are you sure ?"}  %></div>
+          method: :delete,
+          data: { confirm: "are you sure ?"}  %>
+        </div>
+        <% end %>
+        <% if @service.bookings.length == 0 %>
+          <div class="card-info"><p> Disponible </p></div>
+          <% else %>
+          <div><p>Pas Disponible</p></div>
         <% end %>
       </div>
   </div>
