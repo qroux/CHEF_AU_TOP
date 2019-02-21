@@ -1,7 +1,8 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://www.campusfrance.org/sites/default/files/styles/mobile_visuel_principal_page/public/medias/images/2017-09/ETUD_4_gastronomie.jpg?itok=5G72Z_bm');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%),url(<%= cl_image_path("sm41bpbfwscwqztqaqo1", crop: :fill) %>) ">
+
   <div class="banner-content">
     <h1>Chef au top</h1>
-    <p>Chef à domicile</p>
+    <p>Partout en France, nous cuisinons chez vous</p>
     <%= form_tag services_path, method: :get do %>
     <%= text_field_tag :query,
     params[:query],
@@ -12,4 +13,16 @@
   </a>
 </div>
 </div>
-<%= link_to "+ aller à l'index des services", services_path %>
+
+<div>
+<h3>Découvrez les derniers menus de nos chefs</h3>
+</div>
+
+<div class="container">
+<div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
+<%= link_to "Je découvre", services_path, class: "home-button" %>
+
+</div>
+</div>
+
