@@ -1,58 +1,31 @@
-<div class="container">
-  <div id="show_banner">
-    <div class="card-container">
-      <%= cl_image_tag @service.picture, height: 300, width: 700, crop: :fill %>
-      <span class="menu-name">
-        <%= @service.menu_name %>
-      </span>
+<div class="container services-container flex-container">
+  <div class="background-white">
+    <div id="show_banner">
+      <div class="card-container">
+        <div id="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @service.picture, height: 300, width: 700, crop: :fill %>);">
+          <span class="menu-name">
+            <%= @service.menu_name %>
+          </span>
+        </div>
       </div>
     </div>
     <div>
-       <h4><strong> NOM DU CHEF : <%= @service.user.first_name %> <%= @service.user.last_name %> </strong></h4>
+      <h4><strong> NOM DU CHEF : <%= @service.user.first_name %> <%= @service.user.last_name %> </strong></h4>
+      <div>
+        <div class="card-info"><p><strong><%= "Categorie:   " %></strong> <br><%= @service.category %></p></div>
+        <div class="card-info"><p><strong><%= "Description du menu:   " %></strong> <br><%= @service.menu %></p></div>
+        <div class="card-info"><p> <strong><%= "Date:   " %></strong> <br> <%= @service.date %></p></div>
+        <div class="card-info"><p> <strong><%= "Shift:   " %> </strong><br><%= @service.shift %></p></div>
+        <div class="card-info"><p><strong><%= "Prix par personnes:   " %> </strong> <br><%=  @service.price %></p></div>
+        <div class="card-info"><strong><p><%= "Nombre de personnes:   " %></strong><br> <%=  @service.max_quantity %></p></div>
+      </div>
     </div>
-    <div>
-       <div class="card-info"><p><strong><%= "Categorie:   " %></strong> <br><%= @service.category %></p></div>
-       <div class="card-info"><p><strong><%= "Description du menu:   " %></strong> <br><%= @service.menu %></p></div>
-      <div class="card-info"><p> <strong><%= "Date:   " %></strong> <br> <%= @service.date %></p></div>
-      <div class="card-info"><p> <strong><%= "Shift:   " %> </strong><br><%= @service.shift %></p></div>
-      <div class="card-info"><p><strong><%= "Prix par personnes:   " %> </strong> <br><%=  @service.price %></p></div>
-      <div class="card-info"><strong><p><%= "Nombre de personnes:   " %></strong><br> <%=  @service.max_quantity %></p></div>
-    </div>
   </div>
-  <div id="index_footer">
-    <div class="footer-button"><%= link_to "RESERVER CETTE PRESTATION", new_service_booking_path(@service) %></div>
-   <br> <div class="footer-button"><%= link_to "retour à l'index", services_path %></div>
-    <% if policy(@service).edit? %>
-    <br> <div class="footer-button"><%= link_to "éditer le menu", edit_service_path(@service) %></div>
-    <% end %>
-  </div>
-
-  <div>
-
-    <p><%= @service.menu %></p>
-    <p><%= @service.price %></p>
-    <p><%= @service.max_quantity %></p>
-    <p><%= @service.category %></p>
-    <p><%= @service.date %></p>
-    <p><%= @service.shift %></p>
-  </div>
+    <div class="" id="reservation">
+      <h1>Faire une reservation</h1>
+      <%= simple_form_for [@service, @booking] do |f| %>
+      <%= f.input :place %>
+      <%= f.input :quantity %>
+      <%= f.button :submit %>
+      <% end %>
 </div>
-
-<%= link_to "RESERVER CETTE PRESTATION", new_service_booking_path(@service) %>
-
-<%= link_to "retour à l'index", services_path %>
-<% if policy(@service).edit? %>
-<%= link_to "éditer le menu", edit_service_path(@service) %>
-<% end %>
-
-
-
-<h1>Faire une reservation</h1>
-
-
-<%= simple_form_for [@service, @booking] do |f| %>
-<%= f.input :place %>
-<%= f.input :quantity %>
-<%= f.button :submit %>
-<% end %>
-
