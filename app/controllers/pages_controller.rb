@@ -3,4 +3,7 @@ class PagesController < ApplicationController
   def home
     @service = Service.new
   end
+
+  def about
+  end
 end
