@@ -8,6 +8,7 @@ gem 'puma'
 gem 'rails', '5.2.2'
 gem 'redis'
 
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
