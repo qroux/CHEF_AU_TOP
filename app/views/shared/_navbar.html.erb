@@ -5,16 +5,23 @@
   </a>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
  <%= link_to'about', about_path %>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Log In</a>
+    <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    <% else %>
+    <%= link_to "Log in", new_user_session_path %>
+    <% end %>
+
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li> <%= link_to "Mes reservations", bookings_path %> </li>
+          <li> <%= link_to "Mes services reservés", my_bookings_path %> </li>
+          <li> <%= link_to "Modifier mon profil", edit_user_registration_path %> </li>
+
         </ul>
       </div>
     </div>

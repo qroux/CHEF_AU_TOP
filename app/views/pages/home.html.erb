@@ -2,8 +2,14 @@
   <div class="banner-content">
     <h1>Chef au top</h1>
     <p>Chef à domicile</p>
-
-    </a>
-  </div>
+    <%= form_tag services_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "type de cuisine"
+    %>
+    <% end %>
+  </a>
+</div>
 </div>
 <%= link_to "+ aller à l'index des services", services_path %>
