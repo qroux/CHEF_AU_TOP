@@ -17,5 +17,5 @@ User.create!(email: "milena@gmail.com", password: "azerty123", first_name: "mile
 User.create!(email: "quentin@gmail.com", password: "azerty123", first_name: "quentin", last_name: "roux")
 
 
-Service.create!(menu: "Boeuf de Kobe, Otoro, Mochi", price: 45, max_quantity: 5, picture: (Rails.root.join("app/assets/images/sushi.jpg").open), category: "japonais", date: "Mon, 25 Feb 2019", shift: "soir", user_id: 1, menu_name: "Delices japonais")
-Service.create!(menu: "Assortiment de mezze", price: 45, max_quantity: 5, picture: (Rails.root.join("app/assets/images/libanais.jpg").open), category: "libanais", date: "Mon, 25 Feb 2019", shift: "soir", user_id: 2, menu_name: "Delices libanais")
+Service.create!(menu: "Boeuf de Kobe, Otoro, Mochi", price: 45, max_quantity: 5, picture: (Rails.root.join("app/assets/images/sushi.jpg").open), category: "japonais", date: "Mon, 25 Feb 2019", shift: "soir", user: User.all.sample, menu_name: "Delices japonais")
+Service.create!(menu: "Assortiment de mezze", price: 45, max_quantity: 5, picture: (Rails.root.join("app/assets/images/libanais.jpg").open), category: "libanais", date: "Mon, 25 Feb 2019", shift: "soir", User.all.sample, menu_name: "Delices libanais")
