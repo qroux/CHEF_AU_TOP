@@ -1,0 +1,17 @@
+.my_edit_form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-item {
+  flex: 0 0 30%;
+  padding:  20px 30px;
+}
+.flex-item-2 {
+  flex: 0 0 70%;
+  padding:  20px 30px;
+}
+
+.title {
+  border-bottom:  0.5px solid;
+}
