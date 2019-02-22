@@ -80,6 +80,7 @@ html {
 .card-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 60px;
+  text-align: center;
   font-weight: 300;
   line-height: 60px;
   margin: 10px 0;
@@ -99,9 +100,32 @@ html {
 }
 
 .button-delete{
-  font-size: 12px;
-  margin-top: 5px;
-
+  color: white !important;
+  border-radius: 50%;
+  border: 2px solid white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transform: rotate(45deg);
+  opacity: 1;
+  &:hover {
+    color: white!important;;
+    text-decoration: none;
+    opacity: 0.8;
+    font-weight: bolder;
+  }
+  a {
+      color: white!important;;
+    text-decoration: none;
+    opacity: 0.8;
+    font-weight: bolder;
+    font-size: 25px;
+}
 }
 
 .card-description {
