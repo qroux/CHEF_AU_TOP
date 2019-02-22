@@ -10,7 +10,6 @@
       <span class="card-author subtle">
         <%= cl_image_tag current_user.avatar, height: 300, width: 400, crop: :fill, crop: :thumb, gravity: :face, :class => "avatar"%> <%= service.user.first_name %>
         <% if policy(service).destroy? %>
-
         <div class="button-delete"><%= link_to "+", service_path(service),
           method: :delete,
           data: { confirm: "are you sure ?"}, class: "card-remove-link" %>
@@ -19,13 +18,14 @@
       </span>
       <div class="card-title">
         <h2 ><%= link_to service.menu_name, service_path(service) %></h2>
-
-        <% if service.bookings.length == 0 %>
-          <div class="card-info"><p> Disponible </p></div>
+        <div class="card-info">
+          <% if service.bookings.length == 0 %>
+          <p> Disponible </p>
           <% else %>
-          <div><p>Pas Disponible</p></div>
-        <% end %>
+          <p>Pas Disponible</p>
 
+        </div>
+        <% end %>
       </div>
     </div>
     <% end %>
