@@ -16,17 +16,26 @@
         <div class="card-info"><p><strong><%= "Description du menu:   " %></strong> <br><%= @service.menu %></p></div>
         <div class="card-info"><p> <strong><%= "Date:   " %></strong> <br> <%= @service.date %></p></div>
         <div class="card-info"><p> <strong><%= "Shift:   " %> </strong><br><%= @service.shift %></p></div>
-        <div class="card-info"><p><strong><%= "Prix par personnes:   " %> </strong> <br><%=  @service.price %></p></div>
-        <div class="card-info"><strong><p><%= "Nombre de personnes:   " %></strong><br> <%=  @service.max_quantity %></p></div>
+
+        <div class="card-info"><p><strong><%= "Prix par personne:   " %> </strong> <br><%=  @service.price %></p></div>
+        <div class="card-info"><strong><p><%= "Nombre de couverts:   " %></strong><br> <%=  @service.max_quantity %></p></div>
+        <% if @service.bookings.length == 0 %>
+          <div class="card-info"><p> Disponible </p></div>
+        <% else %>
+          <div><p>Pas Disponible</p></div>
+        <% end %>
+
       </div>
     </div>
   </div>
-    <div class="" id="reservation">
-      <h1>Faire une reservation</h1>
-      <%= simple_form_for [@service, @booking] do |f| %>
-      <%= f.input :place %>
-      <%= f.input :quantity %>
-      <%= f.button :submit %>
-      <% end %>
+    <% if @service.bookings.length == 0 %>
+      <div class="" id="reservation">
+        <h1>Faire une reservation</h1>
+        <%= simple_form_for [@service, @booking] do |f| %>
+        <%= f.input :place, label: "Mon adresse" %>
+        <%= f.input :quantity, collection: (1..@service.max_quantity), label: "Nombre de convive" %>
+        <%= f.button :submit %>
+        <% end %>
+      </div>
+    <% end %>
 </div>
-

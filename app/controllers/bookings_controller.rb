@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @service = Service.find(params[:service_id])
     @booking.service = @service
-    if @booking.quantity < @service.max_quantity
+    if @booking.quantity <= @service.max_quantity
       if @booking.save
         flash[:alert] = nil
         flash[:notice] = "Merci de votre réservation"
