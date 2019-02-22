@@ -24,3 +24,25 @@
   }
 
 }
+
+#booking-full {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+#booking-photo {
+  width: 280px;
+  background-color: red;
+}
+
+#booking-content {
+  width: 830px;
+  margin-top: 10px;
+  a {
+    color: $gray;
+  }
+    a:hover {
+  }
+
+}

@@ -1,14 +1,17 @@
 <ul>
   <% bookings.each do |booking| %>
-
-      <li>
-        <%= cl_image_tag booking.service.picture, height: 120, width: 280, crop: :fill, :effect=>"saturation:-100" %>
-        <%=link_to "#{booking.service.menu_name}", booking%>
-        Votre addresse de réservation
-        <%= link_to "delete", booking_path(booking),
-        method: :delete,
-        data: { confirm: "are you sure ?"}  %>
-
-  <% end %>
-    </li>
+  <% if booking.service.date < Date.today %>
+  <li>
+    <div id="booking-full">
+      <div id="booking-photo">
+        <%= cl_image_tag booking.service.picture, height: 120, width: 280, crop: :fill, :effect=>"saturation:-100" %>      </div>
+      <div id="booking-content">
+        Menu - <%=link_to "#{booking.service.menu_name}", booking%> <br>
+        Votre addresse de réservation - <%= booking.place %> <br>
+        Le <%= booking.service.date %> <br>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </li>
 </ul>
