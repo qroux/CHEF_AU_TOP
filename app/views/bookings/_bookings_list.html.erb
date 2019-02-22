@@ -5,7 +5,9 @@ quand je passe par l'action list_chief_bookings -->
 <ul>
   <% bookings.each do |booking| %>
     <li>
+      <%= cl_image_tag booking.service.picture, height: 120, width: 280, crop: :fill %>
       <%=link_to "#{booking.service.menu_name}", booking%>
+      Votre addresse de réservation
       <%= booking.place %>
       <%= booking.service.date %>
       <%= link_to "delete", booking_path(booking),
