@@ -5,7 +5,7 @@
 <%= f.input :menu_name, label: "Nom du menu"%>
 <%= f.input :menu %>
 <%= f.input :price, label: "Prix par convive" %>
-<%= f.input :max_quantity, label: "Nombre de couverts" %>
+<%= f.input :max_quantity, collection: (1..40), label: "Nombre de couverts" %>
 <%= f.input :category %>
 <%= f.input :date, label: "Disponibilité" %>
 <%= f.input :shift, collection: ['Midi', 'Soir'], label: "Midi ou Soir" %>

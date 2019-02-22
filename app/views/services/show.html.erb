@@ -30,8 +30,8 @@
       <div class="" id="reservation">
         <h1>Faire une reservation</h1>
         <%= simple_form_for [@service, @booking] do |f| %>
-        <%= f.input :place %>
-        <%= f.input :quantity %>
+        <%= f.input :place, label: "Mon adresse" %>
+        <%= f.input :quantity, collection: (1..@service.max_quantity), label: "Nombre de convive" %>
         <%= f.button :submit %>
         <% end %>
       </div>
