@@ -1,16 +1,15 @@
-<h1>Services#new</h1>
-<p>Find me in app/views/services/new.html.erb</p>
+<h1>Je crée ma prestation</h1>
 
 <%= simple_form_for @service do |f| %>
 <%= f.error_notification %>
-<%= f.input :menu_name %>
+<%= f.input :menu_name, label: "Nom du menu"%>
 <%= f.input :menu %>
-<%= f.input :price %>
-<%= f.input :max_quantity %>
+<%= f.input :price, label: "Prix par convive" %>
+<%= f.input :max_quantity, label: "Nombre de couverts" %>
 <%= f.input :category %>
-<%= f.input :date %>
-<%= f.input :shift %>
-<%= f.input :picture %>
+<%= f.input :date, label: "Disponibilité" %>
+<%= f.input :shift, collection: ['Midi', 'Soir'], label: "Midi ou Soir" %>
+<%= f.input :picture, label: "Photo du menu"%>
 <!-- add cloudinary public api "string" -->
 <%= f.button :submit %>
 <% end %>
