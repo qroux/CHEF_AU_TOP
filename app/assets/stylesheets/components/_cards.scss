@@ -49,8 +49,7 @@ html {
 }
 
 .card-body {
-  display: inline-block;
-  float: left;
+
   width: 400px;
 }
 
@@ -148,4 +147,9 @@ html {
 
 }
 
-
+.close-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+}
