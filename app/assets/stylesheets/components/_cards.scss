@@ -49,10 +49,8 @@ html {
 }
 
 .card-body {
-
-  width: 700px;
+   width: 700px;
 }
-
 
 .card-circle {
   border: 1px solid #aaa;
@@ -163,4 +161,9 @@ html {
     color: black;
 }
 
-
+.close-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+}
