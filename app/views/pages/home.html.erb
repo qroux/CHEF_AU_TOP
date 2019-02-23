@@ -1,3 +1,4 @@
+
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%), url('<%= image_path 'photo-acceuil.jpg', height: 300, width: 400, crop: :fill %>')">
 
   <div class="banner-content">
@@ -10,19 +11,33 @@
     placeholder: "type de cuisine"
     %>
     <% end %>
-  </a>
+  </div>
 </div>
-</div>
-
-<div>
-<h3>Découvrez les derniers menus de nos chefs</h3>
-</div>
-
+<h3 class="col-xs-12 text-center heading show-from-sm">Découvrez les derniers menus de nos chefs</h3>
 <div class="container">
-<div class="row">
-    <div class="col-sm-offset-4 col-sm-4">
-<%= link_to "Je découvre", services_path, class: "home-button" %>
-
+  <div class="row">
+    <% @services.each do |service| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="little-container">
+        <%= link_to service_path(service) do %>
+        <%= cl_image_tag service.picture, class: "card-media" %>
+        <div class="card-body">
+          <span class="card-author subtle">
+            <img class="chef" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt=""> <%= service.user.first_name %>
+          </span>
+        </div>
+        <div class="card-footer">
+          <%= link_to service.menu_name, service_path(service), class: "service-title" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
 </div>
-</div>
+<div class="container">
 
+  <div class="flex padded-tb">
+      <%= link_to "Je découvre", services_path, class: "home-button" %>
+  </div>
+</div>

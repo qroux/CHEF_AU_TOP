@@ -1,11 +1,29 @@
 #index_footer {
 text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 30px;
   color: #292B30;
+
 }
 
 .button-footer{
- margin-bottom: 30px;
+color: #292B30 !important;
+  width: 100%;
+
+line-height: 50px;
+
+  a{
+    color: #292B30 !important;
+    opacity: 0.8;
+    text-decoration: none;
+    height: 20px !important;
+
+    }
+
+  a:hover {
+    opacity: 1;
+
+  }
+
 }
 

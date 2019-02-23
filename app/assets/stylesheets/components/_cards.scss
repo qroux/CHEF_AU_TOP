@@ -12,7 +12,7 @@ html {
 }
 
 #top_title {
-  margin-bottom: 100px;
+  margin-bottom: 55px;
   background-color: $light-gray;
   margin-top: 0px;
   text-align: center;
@@ -49,10 +49,8 @@ html {
 }
 
 .card-body {
-
-  width: 400px;
+   width: 700px;
 }
-
 
 .card-circle {
   border: 1px solid #aaa;
@@ -81,16 +79,18 @@ html {
   font-size: 60px;
   text-align: center;
   font-weight: 300;
-  line-height: 60px;
+  line-height: 12px;
   margin: 10px 0;
   width: 700px;
   margin-bottom: 60px;
-  box-shadow: 0px 2px 2px #767777;
+
+  // box-shadow: 0px 2px 2px #767777;
 
     a {
       color: #2a2c30;
       opacity: 0.8;
       text-decoration: none;
+      padding: auto 5px ;
     }
     a:hover {
       opacity: 1;
@@ -141,10 +141,24 @@ html {
 
 
 .card-media {
-  float: right;
-  width: 700px;
-  height: 390px;
+  // float: right;
+  width: 100%;
 
+}
+
+
+.card-info{
+  font-size: 14px;
+  height: 45px;
+}
+
+
+.service-title {
+    background-color: white;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    color: black;
 }
 
 .close-icon {
