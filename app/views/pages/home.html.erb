@@ -1,43 +1,52 @@
+  <div class="home-container">
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%), url('https://picsum.photos/1800/800/?random');">
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%), url('<%= image_path 'photo-acceuil.jpg', height: 300, width: 400, crop: :fill %>')">
-
-  <div class="banner-content">
-    <h1>Chef au top</h1>
-    <p>Partout en France, nous cuisinons chez vous</p>
-    <%= form_tag services_path, method: :get do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "type de cuisine"
-    %>
-    <% end %>
-  </div>
-</div>
-<h3 class="col-xs-12 text-center heading show-from-sm">Découvrez les derniers menus de nos chefs</h3>
+      <div class="banner-content">
+        <h1>Chef au top</h1>
+        <p>Partout en France, nous cuisinons chez vous</p>
+        <%= form_tag services_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "type de cuisine"
+        %>
+        <% end %>
+      </div>
+    </div>
 <div class="container">
-  <div class="row">
-    <% @services.each do |service| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="little-container">
-        <%= link_to service_path(service) do %>
-        <%= cl_image_tag service.picture, class: "card-media" %>
-        <div class="card-body">
-          <span class="card-author subtle">
-            <img class="chef" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt=""> <%= service.user.first_name %>
-          </span>
+  <div class="col-xs-12 text-center heading show-from-sm">
+    <h3>Découvrez les derniers menus de nos chefs</h3>
+    <div class="container">
+      <div class="row">
+        <% @services.each do |service| %>
+        <div class="col-xs-12 col-sm-4">
+            <%= link_to service_path(service) do %>
+          <div class="little-container">
+            <div class="card-media" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%),
+            url(<%= cl_image_path service.picture, height: 230, width: 380, crop: :fill%>);">
+
+            <div class="card-body">
+              <span class="card-author subtle">
+                <%= cl_image_tag service.user.avatar, height: 50, width: 50, crop: :fill, gravity: :face, class: "chef"%>
+                <%= service.user.first_name %>
+              </span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <%= link_to service.menu_name, service_path(service), class: "service-title" %>
+            </div>
+          </div>
+          <% end %>
         </div>
-        <div class="card-footer">
-          <%= link_to service.menu_name, service_path(service), class: "service-title" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="container">
+
+        <div class="flex padded-tb">
+          <%= link_to "Je découvre", services_path, class: "home-button" %>
         </div>
       </div>
-      <% end %>
     </div>
-    <% end %>
-  </div>
-</div>
-<div class="container">
-
-  <div class="flex padded-tb">
-      <%= link_to "Je découvre", services_path, class: "home-button" %>
   </div>
 </div>

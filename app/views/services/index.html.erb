@@ -8,7 +8,7 @@
         <%= cl_image_tag service.picture, class: "card-media" %>
         <div class="card-body">
           <div class="card-author subtle">
-            <%= cl_image_tag current_user.avatar, height: 300, width: 400, crop: :fill, gravity: :face, class: "avatar"%>
+            <%= cl_image_tag service.user.avatar, height: 30, width: 30, crop: :fill, gravity: :face, class: "avatar"%>
             <span><%= service.user.first_name %></span>
             </div>
             <% if policy(service).destroy? %>
