@@ -25,13 +25,13 @@ html {
 .subtle {
   color: white;
   font-size: 35px !important;
+  font-weight: bold;
 }
 
 .card-container {
   margin: auto ;
   position: relative;
   width: 700px;
-  text-align: center;
 }
 
 .card {
@@ -43,8 +43,6 @@ html {
 }
 
 .chef {
-  height: 50px;
-  width: 50px;
   border-radius: 50%;
 }
 
@@ -134,14 +132,10 @@ html {
   margin: 10px 0;
 }
 
-.container {
-  background-color: #F4F4F4;
-}
-
-
 
 .card-media {
   // float: right;
+  height: 200px;
   width: 100%;
 
 }
@@ -152,6 +146,16 @@ html {
   height: 45px;
 }
 
+.card-footer {
+  a {
+    color: black;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #3d3d3d;
+  }
+}
+
 
 .service-title {
     background-color: white;
@@ -159,6 +163,7 @@ html {
     width: 100%;
     border-radius: 5px;
     color: black;
+
 }
 
 .close-icon {
