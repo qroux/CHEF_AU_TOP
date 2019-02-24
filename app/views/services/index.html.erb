@@ -1,11 +1,11 @@
-<div id="top_title">
-  <h1>Nos Propositions</h1>
-</div>
 <div class="container">
+  <div id="top_title">
+    <h1>Nos Propositions</h1>
+  </div>
   <% @services.each do |service| %>
     <%= link_to(service) do %>
       <div class="card-container">
-        <%= cl_image_tag service.picture, class: "card-media" %>
+        <%= cl_image_tag service.picture, height: 400, width: 700, crop: :fill, class: "card-media-index" %>
         <div class="card-body">
           <div class="card-author subtle">
             <%= cl_image_tag service.user.avatar, height: 30, width: 30, crop: :fill, gravity: :face, class: "avatar"%>
