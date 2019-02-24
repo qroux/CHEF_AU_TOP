@@ -24,14 +24,19 @@ html {
 
 .subtle {
   color: white;
-  font-size: 35px !important;
-  font-weight: bold;
+  font-size: 25px !important;
+  // font-weight: bold;
+}
+
+.index-container {
+
+  background-color: red;
 }
 
 .card-container {
   margin: auto ;
   position: relative;
-  width: 700px;
+  width: 38%;
 }
 
 .card {
@@ -140,11 +145,32 @@ html {
 
 }
 
+.little-container {
+  margin-bottom: 15px;
+}
+.little-container-index {
+  margin-bottom: 0px;
+}
 
 .card-info{
   font-size: 14px;
   height: 45px;
 }
+
+.card-info-index-available{
+  font-size: 14px;
+  height: 45px;
+  color: #5faf59;
+}
+
+.card-info-index-unavailable{
+  font-size: 14px;
+  height: 45px;
+  color: red;
+}
+
+
+
 
 .card-footer {
   a {
@@ -160,6 +186,15 @@ html {
 .service-title {
     background-color: white;
     padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    color: black;
+
+}
+
+.service-title-index {
+    background-color: white;
+    padding: 10px 10px 30px 10px;
     width: 100%;
     border-radius: 5px;
     color: black;
