@@ -1,34 +1,24 @@
-<div class="container services-container flex-container">
-  <div class="background-white">
-    <div id="show_banner">
-      <div class="card-container">
-        <div id="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @service.picture, height: 300, width: 700, crop: :fill %>);">
-          <span class="menu-name">
-            <%= @service.menu_name %>
-          </span>
-        </div>
-      </div>
+<div class="container resett">
+  <div class="pagee">
+    <div class="container">
+    <div class="service-contenu">
+      <div class="service-contenu-picture">
+      <div class="service-card-info taille" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @service.picture, height: 150, width: 300, crop: :fill %>);"></div>
+      <div class="service-card-info"><h4><strong> NOM DU CHEF : <%= @service.user.first_name %> <%= @service.user.last_name %> </strong></h4></div>
+      <div class="service-card-info"><p><strong><%= "Categorie:   " %></strong> <br><%= @service.category %></p></div>
+      <div class="service-card-info"><p><strong><%= "Description du menu:   " %></strong> <br><%= @service.menu %></p></div>
+      <div class="service-card-info"><p> <strong><%= "Date:   " %></strong> <br> <%= @service.date %></p></div>
+      <div class="service-card-info"><p> <strong><%= "Shift:   " %> </strong><br><%= @service.shift %></p></div>
+      <div class="service-card-info"><p><strong><%= "Prix par personne:   " %> </strong> <br><%=  @service.price %></p></div>
+      <div class="service-card-info"><strong><p><%= "Nombre de couverts:   " %></strong><br> <%=  @service.max_quantity %></p></div>
+      <% if @service.bookings.length == 0 %>
+      <div class="card-info"><p> Disponible </p></div>
+      <% else %>
+      <div class="card-info"><p>Pas Disponible</p></div>
+      <% end %>
     </div>
-    <div>
-      <h4><strong> NOM DU CHEF : <%= @service.user.first_name %> <%= @service.user.last_name %> </strong></h4>
-      <div>
-        <div class="card-info"><p><strong><%= "Categorie:   " %></strong> <br><%= @service.category %></p></div>
-        <div class="card-info"><p><strong><%= "Description du menu:   " %></strong> <br><%= @service.menu %></p></div>
-        <div class="card-info"><p> <strong><%= "Date:   " %></strong> <br> <%= @service.date %></p></div>
-        <div class="card-info"><p> <strong><%= "Shift:   " %> </strong><br><%= @service.shift %></p></div>
-
-        <div class="card-info"><p><strong><%= "Prix par personne:   " %> </strong> <br><%=  @service.price %></p></div>
-        <div class="card-info"><strong><p><%= "Nombre de couverts:   " %></strong><br> <%=  @service.max_quantity %></p></div>
-        <% if @service.bookings.length == 0 %>
-          <div class="card-info"><p> Disponible </p></div>
-        <% else %>
-          <div><p>Pas Disponible</p></div>
-        <% end %>
-
-      </div>
-    </div>
-  </div>
-    <% if @service.bookings.length == 0 %>
+    <div class="service-booking">
+      <% if @service.bookings.length == 0 %>
       <div class="" id="reservation">
         <h1>Faire une reservation</h1>
         <%= simple_form_for [@service, @booking] do |f| %>
@@ -37,5 +27,9 @@
         <%= f.button :submit %>
         <% end %>
       </div>
-    <% end %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+  </div>
 </div>
