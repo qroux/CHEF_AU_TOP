@@ -30,7 +30,6 @@ html {
 
 .index-container {
 
-  background-color: red;
 }
 
 .card-container {
@@ -207,3 +206,75 @@ html {
     top: 10px;
     color: white;
 }
+
+ .pagee {
+   display: flex;
+   flex-wrap: wrap;
+   justify-items: center;
+
+   width: 1800px;
+ }
+
+
+
+.service-contenu {
+  width: 60%;
+  text-align: center;
+
+}
+// .service-booking {
+//   width: 25%;
+//   justify-items: center;
+// }
+
+.service-card-info {
+  border-top: 1px dashed #e1e4e8;
+
+}
+
+.resett {
+  margin: 0;
+  padding: 0;
+}
+
+.taille {
+   height: 150px;
+   width: 500px;
+ }
+
+.menu-name-show {
+    display: block;
+  font-size: 12px;
+  letter-spacing: .5px;
+  margin: 15px 0 0;
+  text-transform: uppercase;
+
+  top: 100px;
+  left: 150px;
+  color: white;
+  font-size: 50px;
+
+}
+
+.service-menu {
+  text-transform: capitalize;
+}
+
+
+
+  // @media (max-width: 500px){
+  //   .pagee {
+  //     flex-direction: column;
+  //   }
+  //   .service-contenu {
+
+  //     width: 360px;
+
+  //   }
+  //   .service-booking {
+
+  //     width: 360px;
+
+  //   }
+
+  // }
