@@ -222,9 +222,10 @@ html {
   text-align: center;
 
 }
-.service-booking {
-  width: 15%;
-}
+// .service-booking {
+//   width: 25%;
+//   justify-items: center;
+// }
 
 .service-card-info {
   border-top: 1px dashed #e1e4e8;
@@ -241,6 +242,23 @@ html {
    width: 500px;
  }
 
+.menu-name-show {
+    display: block;
+  font-size: 12px;
+  letter-spacing: .5px;
+  margin: 15px 0 0;
+  text-transform: uppercase;
+
+  top: 100px;
+  left: 150px;
+  color: white;
+  font-size: 50px;
+
+}
+
+.service-menu {
+  text-transform: capitalize;
+}
 
 
 
