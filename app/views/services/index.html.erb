@@ -9,12 +9,12 @@
           <div class="little-container-index">
             <div class="card-media" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%),
               url(<%= cl_image_path service.picture, height: 230, width: 750, crop: :fill%>);">
-                          <% if policy(service).destroy? %>
-                <%= link_to service, method: :delete,
-                data: { confirm: "are you sure ?"} do %>
-                 <i class="far fa-times-circle close-icon"></i>
-                 <% end %>
-            <% end %>
+                <% if policy(service).destroy? %>
+                  <%= link_to service, method: :delete,
+                  data: { confirm: "are you sure ?"} do %>
+                  <i class="far fa-times-circle close-icon"></i>
+                  <% end %>
+                <% end %>
               <div class="card-body">
                 <span class="card-author subtle">
                   <%= cl_image_tag service.user.avatar, height: 50, width: 50, crop: :fill, gravity: :face, class: "chef"%>
@@ -39,12 +39,12 @@
         </div>
         <% end %>
       </div>
-              <div id="index_footer">
-  <div class="button-footer">
-    <%= link_to "+ Ajouter un nouveau menu", new_service_path %>
-  </div>
-  <div class="button-footer">
-    <%= link_to "Retour à la page Home", root_path %>
-  </div>
-</div>
+      <div id="index_footer">
+        <div class="button-footer">
+          <%= link_to "+ Ajouter un nouveau menu", new_service_path %>
+        </div>
+        <div class="button-footer">
+          <%= link_to "Retour à la page Home", root_path %>
+        </div>
+      </div>
     </div>
